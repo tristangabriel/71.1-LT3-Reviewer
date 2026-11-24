@@ -17,7 +17,7 @@ def cover(p1, p2, letter):
             grid[m][p1[1]]= letter if (grid[m][p1[1]] in valid) else 'P'
 
 
-    
+
 
 r, c = [int(_) for _ in input().split()]
 grid = [list(input()) for _ in range(r)]

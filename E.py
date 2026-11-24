@@ -1,16 +1,12 @@
-n, k = [int(_) for _ in input().split()]
-x = [int(_) for _ in input().split()]
-histo = {}
-for y in x:
-    if y in histo:
-        histo[y]+=1
-    else:
-        histo[y]=1
-cnt = 0
-for y in histo.keys():
-    cnt += histo[y]-1
-    for a in range(1, k+1):
-        if (a+y) in histo:
-            print(y, a+y)
-            cnt += histo[a+y]*histo[y]
+kiss = {}
+for _ in range(3):
+    row = input()
+    for i in range(len(row)):
+        kiss[row[i]] = (_, i)
+
+cnt, x, y = 1, 0, 0
+for c in input():
+    cnt += abs(kiss[c][0]-x) + abs(kiss[c][1]-y) + 1
+    x, y = kiss[c]
+
 print(cnt)
